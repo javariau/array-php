@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjelasan Index dalam Array</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .explanation {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .example {
+            background-color: #f1f8ff;
+            padding: 15px;
+            border-left: 4px solid #4da6ff;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .array-visualization {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        .array-element {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .index {
+            background-color: #e9ecef;
+            font-weight: bold;
+            padding: 5px;
+            width: 100%;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .value {
+            background-color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .code {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        .important-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .interactive-demo {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pemahaman tentang Index dalam Array</h1>
+    
+    <div class="container">
+        <h2>Apa itu Index?</h2>
+        <div class="explanation">
+            <p>Index adalah penanda posisi atau lokasi suatu elemen dalam struktur data array. 
+            Index biasanya berupa angka integer yang dimulai dari 0 (dalam kebanyakan bahasa pemrograman).</p>
+            
+            <p>Bayangkan array seperti deretan kotak penyimpanan yang diberi nomor. 
+            Nomor kotak itulah yang disebut index, sedangkan isi kotaknya adalah nilai (value) dari array.</p>
+        </div>
+        
+        <div class="example">
+            <h3>Contoh Array</h3>
+            <p>Dalam PHP, kita bisa membuat array seperti ini:</p>
+            <div class="code">
+                $nama = array("bintang", "joko", "ani", "susi");
+            </div>
+            
+            <p>Array tersebut dapat divisualisasikan sebagai berikut:</p>
+            
+            <div class="array-visualization">
+                <div class="array-element">
+                    <div class="index">Index 0</div>
+                    <div class="value">"bintang"</div>
+                </div>
+                <div class="array-element">
+                    <div class="index">Index 1</div>
+                    <div class="value">"joko"</div>
+                </div>
+                <div class="array-element">
+                    <div class="index">Index 2</div>
+                    <div class="value">"ani"</div>
+                </div>
+                <div class="array-element">
+                    <div class="index">Index 3</div>
+                    <div class="value">"susi"</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="important-note">
+            <h3>Penting untuk Diingat!</h3>
+            <p>Dalam kebanyakan bahasa pemrograman termasuk PHP, index array selalu dimulai dari 0, bukan 1. 
+            Jadi elemen pertama memiliki index 0, elemen kedua index 1, dan seterusnya.</p>
+        </div>
+        
+        <div class="explanation">
+            <h3>Bagaimana Cara Mengakses Elemen Array?</h3>
+            <p>Kita menggunakan index untuk mengakses elemen array. Contoh:</p>
+            <div class="code">
+                echo $nama[0]; // Output: bintang<br>
+                echo $nama[2]; // Output: ani
+            </div>
+            
+            <p>Jika kita mencoba mengakses index yang tidak ada, akan terjadi error.</p>
+            <div class="code">
+                echo $nama[5]; // Error: undefined offset
+            </div>
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Demo Interaktif: Coba Akses Array</h3>
+            <p>Array: ["bintang", "joko", "ani", "susi"]</p>
+            <div>
+                <input type="number" id="indexInput" min="0" max="3" value="0">
+                <button onclick="accessArray()">Akses Elemen</button>
+            </div>
+            <p id="result">Hasil: bintang</p>
+        </div>
+        
+        <div class="explanation">
+            <h3>Index pada Array Asosiatif</h3>
+            <p>PHP juga mendukung array asosiatif dimana indexnya bukan angka, tetapi string (disebut key).</p>
+            <div class="code">
+                $mahasiswa = [<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"nama" => "Bintang",<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"umur" => 20,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"alamat" => "Jakarta"<br>
+                ];<br><br>
+                echo $mahasiswa["nama"]; // Output: Bintang
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const names = ["bintang", "joko", "ani", "susi"];
+        
+        function accessArray() {
+            const index = parseInt(document.getElementById('indexInput').value);
+            const resultElement = document.getElementById('result');
+            
+            if (index >= 0 && index < names.length) {
+                resultElement.textContent = `Hasil: ${names[index]}`;
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = 'Error: Index di luar batas array!';
+                resultElement.style.color = 'red';
+            }
+        }
+        
+        // Batasi input antara 0-3
+        document.getElementById('indexInput').addEventListener('change', function() {
+            if (this.value < 0) this.value = 0;
+            if (this.value > 3) this.value = 3;
+        });
+    </script>
+</body>
+</html>
