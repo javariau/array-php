@@ -7,4 +7,5 @@ echo "hero saya adalah :".$damage."\n".$heroml."namanya" ;
 
 
 echo "Hello, World!";
+echo "<br>";    
 echo "fsociety";
